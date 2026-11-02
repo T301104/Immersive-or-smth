@@ -660,7 +660,7 @@ MonoBehaviour:
   ButtonOneUI: {fileID: 1231346294}
   ButtonTwoUI: {fileID: 1755329504}
   cameraStart: {fileID: 583659034}
-  slidingPuzzle: {fileID: 7178957115726578736, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+  slidingPuzzle: {fileID: 1636379252}
 --- !u!1 &1082665339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,6 +1075,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8707e70d15dba374f98095a92fc5eb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlidingGameManager
+--- !u!114 &1636379252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7178957115726578736, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+  m_PrefabInstance: {fileID: 1750761831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
 --- !u!1 &1636992897
 GameObject:
   m_ObjectHideFlags: 0

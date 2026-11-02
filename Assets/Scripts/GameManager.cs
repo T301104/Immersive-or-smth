@@ -42,10 +42,7 @@ public class GameManager : NetworkBehaviour
 		Debug.Log("trying to host");
 		NetworkManager.StartHost();
 		OffStartUI();
-		//NetworkObject slidingGameInstance = Instantiate(slidingPuzzle);
-		//slidingGameInstance.GetComponent<NetworkObject>().Spawn();
 
-		//slidingPuzzle.SetActive(true);
 		Debug.Log(NetworkManager.ConnectedClientsList);
 		
 	}

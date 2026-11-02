@@ -55,11 +55,5 @@ public class PlayerScript : NetworkBehaviour
 		uv[3] = new Vector2((width * (col + 1)) - gap, 1 - ((width * row) + gap));
 
 		mesh.uv = uv;
-		//magic numbers cuz im brute forcing it
-		//if ((row == slidingGameManager.gameSize.Value - 1) && (col == slidingGameManager.gameSize.Value - 1))
-		//{
-		//	slidingGameManager.emptyLocation = (slidingGameManager.gameSize.Value * slidingGameManager.gameSize.Value) - 1;
-		//	gamePiece.gameObject.SetActive(false);
-		//}
 	}
 }
