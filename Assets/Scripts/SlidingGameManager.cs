@@ -144,6 +144,7 @@ public class SlidingGameManager : NetworkBehaviour
 	}
 	private void SettupGame(float gapThickness)
     {
+		Debug.Log("Invocation list: " + OnStartupEvent.GetInvocationList().Length);
         float width = 1 / (float)gameSize.Value;
         for (int row = 0; row < gameSize.Value; row++)
         {

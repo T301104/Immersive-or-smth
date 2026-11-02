@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerScript : NetworkBehaviour
@@ -19,7 +19,17 @@ public class PlayerScript : NetworkBehaviour
 
 		StartCoroutine(OwnerCheck());
 	}
-
+	private void Update()
+	{
+		if (!IsOwner)
+		{
+			return;
+		}
+		if (Input.GetKeyDown(KeyCode.V))
+		{
+			myCam.transform.position = myCam.transform.position + new Vector3(20,0,0);
+		}
+	}
 	IEnumerator OwnerCheck()
 	{
 		yield return new WaitForSeconds(1);
