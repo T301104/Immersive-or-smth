@@ -3,13 +3,14 @@ using System;
 using System.Collections;
 using System.IO;
 using System.IO.Ports;
+using Unity.Netcode;
 using UnityEngine;
 
 
-public class SerialScript : MonoBehaviour
+public class SerialScript : NetworkBehaviour
 {
 	SerialPort stream;
-	string value;
+	NetworkVariable<string> value;
 
 	[SerializeField] GameObject errorOne;
 	[SerializeField] GameObject errorTwo;
@@ -29,7 +30,7 @@ public class SerialScript : MonoBehaviour
 		stream.BaseStream.Flush();
 		StartCoroutine(
 			AsynchronousReadFromArduino(
-			(string s) => value = s,
+			(string s) => value.Value = s,
 			() => Debug.LogError("Error!"),
 			100f
 			)
@@ -39,7 +40,7 @@ public class SerialScript : MonoBehaviour
 
 		int count = 0;
 
-		if (value[0] == '0')
+		if (value.Value[0] == '0')
 		{
 			errorOne.SetActive(true);
 		}
@@ -48,7 +49,7 @@ public class SerialScript : MonoBehaviour
 			errorOne.SetActive(false);
 			count++;
 		}
-		if (value[1] == '0')
+		if (value.Value[1] == '0')
 		{
 			errorTwo.SetActive(true);
 		}
@@ -57,7 +58,7 @@ public class SerialScript : MonoBehaviour
 			errorTwo.SetActive(false);
 			count++;
 		}
-		if (value[2] == '0')
+		if (value.Value[2] == '0')
 		{
 			errorThree.SetActive(true);
 		}
