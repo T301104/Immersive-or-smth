@@ -10,7 +10,9 @@ using UnityEngine;
 public class SerialScript : NetworkBehaviour
 {
 	SerialPort stream;
-	NetworkVariable<string> value;
+	NetworkVariable<int> valueOne;
+	NetworkVariable<int> valueTwo;
+	NetworkVariable<int> valueThree;
 
 	[SerializeField] GameObject errorOne;
 	[SerializeField] GameObject errorTwo;
@@ -19,7 +21,9 @@ public class SerialScript : NetworkBehaviour
 	void Start()
 	{
 		stream = new SerialPort("COM4", 9600);
-		value = new NetworkVariable<string>();
+		valueOne = new NetworkVariable<int>();
+		valueTwo = new NetworkVariable<int>();
+		valueThree = new NetworkVariable<int>();
 		stream.ReadTimeout = 50;
 	}
 
@@ -29,6 +33,7 @@ public class SerialScript : NetworkBehaviour
 		value.OnValueChanged += CheckErrors;
 	}
 
+		string tmp;
 	void Update()
 	{	
 		stream.Open();
@@ -36,15 +41,16 @@ public class SerialScript : NetworkBehaviour
 		stream.BaseStream.Flush();
 		StartCoroutine(
 			AsynchronousReadFromArduino(
-			(string s) => value.Value = s,
+			(string s) => tmp = s,
 			() => Debug.LogError("Error!"),
 			100f
 			)
 		);
 		stream.Close();
-		Debug.Log(value);
-
-
+		valueOne.Value = tmp[0] - '0';
+		valueTwo.Value = tmp[1] - '0';
+		valueThree.Value = tmp[2] - '0';
+		//Debug.Log(value);
 	}
 
 	private void CheckErrors(string old, string current)
