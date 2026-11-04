@@ -49,9 +49,10 @@ public class SerialScript : NetworkBehaviour
 
 	private void CheckErrors(string old, string current)
 	{
+		Debug.Log("value is changed");
 		int count = 0;
 
-		if (value.Value[0] == '0')
+		if (current[0] == '0')
 		{
 			errorOne.SetActive(true);
 		}
@@ -60,7 +61,7 @@ public class SerialScript : NetworkBehaviour
 			errorOne.SetActive(false);
 			count++;
 		}
-		if (value.Value[1] == '0')
+		if (current[1] == '0')
 		{
 			errorTwo.SetActive(true);
 		}
@@ -69,7 +70,7 @@ public class SerialScript : NetworkBehaviour
 			errorTwo.SetActive(false);
 			count++;
 		}
-		if (value.Value[2] == '0')
+		if (current[2] == '0')
 		{
 			errorThree.SetActive(true);
 		}
