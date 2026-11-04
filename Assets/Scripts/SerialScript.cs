@@ -23,6 +23,11 @@ public class SerialScript : NetworkBehaviour
 		stream.ReadTimeout = 50;
 	}
 
+	public override void OnNetworkSpawn ()
+	{
+		base.OnNetworkSpawn ();
+		value.OnValueChanged += CheckErrors;
+	}
 
 	void Update()
 	{	
@@ -39,6 +44,11 @@ public class SerialScript : NetworkBehaviour
 		stream.Close();
 		Debug.Log(value);
 
+
+	}
+
+	private void CheckErrors(string old, string current)
+	{
 		int count = 0;
 
 		if (value.Value[0] == '0')
