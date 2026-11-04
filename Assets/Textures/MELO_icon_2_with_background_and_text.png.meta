@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7e75293ebff83254cb4030ef48500a40
+guid: f60051b3c5669d8489ca2f69fba2ed8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7880131649620396539
-    second: Code_0
+      213: -8166608693851682913
+    second: MELO_icon_2_with_background_and_text_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Code_0
+      name: MELO_icon_2_with_background_and_text_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1440
-        height: 1440
+        x: 510
+        y: 567
+        width: 2427
+        height: 2407
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf9cfee0cf9db5d60800000000000000
-      internalID: 7880131649620396539
+      spriteID: f978a5759a06aae80800000000000000
+      internalID: -8166608693851682913
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Code_0: 7880131649620396539
+      MELO_icon_2_with_background_and_text_0: -8166608693851682913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

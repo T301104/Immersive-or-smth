@@ -9,7 +9,10 @@ public class PlayerScript : NetworkBehaviour
 {
 	public Camera myCam;
 	public AudioListener audioListener;
+	[SerializeField] private GameObject UIPassword;
 
+	private bool isPrison = false;
+	private bool isControl = false;
 	[SerializeField] private SlidingGameManager slidingGameManager;
 	[SerializeField] private GameObject GameBoardObj;
 
@@ -25,8 +28,14 @@ public class PlayerScript : NetworkBehaviour
 		{
 			return;
 		}
-		if (Input.GetKeyDown(KeyCode.V))
+		if (Input.GetKeyDown(KeyCode.C) && !isPrison && !isControl)
 		{
+			isControl = true;
+			UIPassword.SetActive(true);
+		}
+		if (Input.GetKeyDown(KeyCode.P) && !isPrison && !isControl)
+		{
+			isPrison = true;
 			Debug.Log("trying to change pos");
 			myCam.transform.position = new Vector3(77.55f,0,-10);
 		}
@@ -42,7 +51,7 @@ public class PlayerScript : NetworkBehaviour
 		else
 		{
 			Debug.Log("There is an owner");
-
+			UIPassword = GameObject.Find("GameManager").GetComponent<GameManager>().passwordUI;
 			//GameBoardObj = GameObject.Find("GameBoard");
 			//slidingGameManager = GameObject.Find("GameBoard").GetComponent<SlidingGameManager>();
 			////Debug.Log(slidingGameManager.ToString());

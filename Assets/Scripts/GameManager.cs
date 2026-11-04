@@ -9,6 +9,8 @@ public class GameManager : NetworkBehaviour
 	[SerializeField] GameObject ButtonTwoUI;
 	[SerializeField] GameObject cameraStart;
 	[SerializeField] NetworkObject slidingPuzzle;
+
+	[SerializeField] public GameObject passwordUI;
 	public event Action OnStartHost, OnStartClient, OnDiconnectClient;
 
 
