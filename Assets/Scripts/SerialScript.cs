@@ -19,6 +19,7 @@ public class SerialScript : NetworkBehaviour
 	void Start()
 	{
 		stream = new SerialPort("COM4", 9600);
+		value = new NetworkVariable<string>();
 		stream.ReadTimeout = 50;
 	}
 
