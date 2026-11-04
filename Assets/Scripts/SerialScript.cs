@@ -13,6 +13,8 @@ public class SerialScript : NetworkBehaviour
 	NetworkVariable<int> valueOne;
 	NetworkVariable<int> valueTwo;
 	NetworkVariable<int> valueThree;
+	int count = 0;
+
 
 	[SerializeField] GameObject errorOne;
 	[SerializeField] GameObject errorTwo;
@@ -30,7 +32,9 @@ public class SerialScript : NetworkBehaviour
 	public override void OnNetworkSpawn ()
 	{
 		base.OnNetworkSpawn ();
-		value.OnValueChanged += CheckErrors;
+		valueOne.OnValueChanged += CheckErrorOne;
+		valueTwo.OnValueChanged += CheckErrorTwo;
+		valueThree.OnValueChanged += CheckErrorThree;
 	}
 
 		string tmp;
@@ -53,12 +57,11 @@ public class SerialScript : NetworkBehaviour
 		//Debug.Log(value);
 	}
 
-	private void CheckErrors(string old, string current)
+	private void CheckErrorOne(int old, int current)
 	{
 		Debug.Log("value is changed");
-		int count = 0;
 
-		if (current[0] == '0')
+		if (current == 0)
 		{
 			errorOne.SetActive(true);
 		}
@@ -67,7 +70,11 @@ public class SerialScript : NetworkBehaviour
 			errorOne.SetActive(false);
 			count++;
 		}
-		if (current[1] == '0')
+	}
+
+	private void CheckErrorTwo(int old, int current)
+	{
+		if (current == 0)
 		{
 			errorTwo.SetActive(true);
 		}
@@ -76,7 +83,16 @@ public class SerialScript : NetworkBehaviour
 			errorTwo.SetActive(false);
 			count++;
 		}
-		if (current[2] == '0')
+
+		if (count == 3)
+		{
+			this.gameObject.SetActive(false);
+		}
+	}
+
+	private void CheckErrorThree(int old, int current)
+	{
+		if (current  == 0)
 		{
 			errorThree.SetActive(true);
 		}
@@ -84,10 +100,6 @@ public class SerialScript : NetworkBehaviour
 		{
 			errorThree.SetActive(false);
 			count++;
-		}
-		if (count == 3)
-		{
-			this.gameObject.SetActive(false);
 		}
 	}
 
