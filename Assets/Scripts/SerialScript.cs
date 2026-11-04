@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.IO;
@@ -9,6 +10,10 @@ public class SerialScript : MonoBehaviour
 {
 	SerialPort stream;
 	string value;
+
+	[SerializeField] GameObject errorOne;
+	[SerializeField] GameObject errorTwo;
+	[SerializeField] GameObject errorThree;
 
 	void Start()
 	{
@@ -30,9 +35,41 @@ public class SerialScript : MonoBehaviour
 			)
 		);
 		stream.Close();
-		Debug.Log(value[0]);
-		Debug.Log(value[1]);
-		Debug.Log(value[2]);
+		Debug.Log(value);
+
+		int count = 0;
+
+		if (value[0] == '0')
+		{
+			errorOne.SetActive(true);
+		}
+		else
+		{
+			errorOne.SetActive(false);
+			count++;
+		}
+		if (value[1] == '0')
+		{
+			errorTwo.SetActive(true);
+		}
+		else
+		{
+			errorTwo.SetActive(false);
+			count++;
+		}
+		if (value[2] == '0')
+		{
+			errorThree.SetActive(true);
+		}
+		else
+		{
+			errorThree.SetActive(false);
+			count++;
+		}
+		if (count == 3)
+		{
+			this.gameObject.SetActive(false);
+		}
 	}
 
 	public IEnumerator AsynchronousReadFromArduino(Action<string> callback, Action fail = null, float timeout = float.PositiveInfinity)
