@@ -8,7 +8,10 @@ public class PlayerScript : NetworkBehaviour
 {
 	public Camera myCam;
 	public AudioListener audioListener;
+	[SerializeField] private GameObject UIPassword;
 
+	private bool isPrison = false;
+	private bool isControl = false;
 	[SerializeField] private SlidingGameManager slidingGameManager;
 	[SerializeField] private GameObject GameBoardObj;
 
@@ -18,7 +21,24 @@ public class PlayerScript : NetworkBehaviour
 
 		StartCoroutine(OwnerCheck());
 	}
-
+	private void Update()
+	{
+		if (!IsOwner)
+		{
+			return;
+		}
+		if (Input.GetKeyDown(KeyCode.C) && !isPrison && !isControl)
+		{
+			isControl = true;
+			UIPassword.SetActive(true);
+		}
+		if (Input.GetKeyDown(KeyCode.P) && !isPrison && !isControl)
+		{
+			isPrison = true;
+			Debug.Log("trying to change pos");
+			myCam.transform.position = new Vector3(77.55f,0,-10);
+		}
+	}
 	IEnumerator OwnerCheck()
 	{
 		yield return new WaitForSeconds(1);
@@ -30,29 +50,31 @@ public class PlayerScript : NetworkBehaviour
 		else
 		{
 			Debug.Log("There is an owner");
-			GameBoardObj = GameObject.Find("GameBoard");
-			slidingGameManager = GameObject.Find("GameBoard").GetComponent<SlidingGameManager>();
-			//Debug.Log(slidingGameManager.ToString());
-			//slidingGameManager.players.Add(this);
-			SlidingGameManager.OnStartupEvent += ReadyUp;
+			UIPassword = GameObject.Find("GameManager").GetComponent<GameManager>().passwordUI;
+			//GameBoardObj = GameObject.Find("GameBoard");
+			//slidingGameManager = GameObject.Find("GameBoard").GetComponent<SlidingGameManager>();
+			////Debug.Log(slidingGameManager.ToString());
+			////slidingGameManager.players.Add(this);
+			//SlidingGameManager.OnStartupEvent += ReadyUp;
 
-			myCam = Camera.main;
+			myCam.enabled = true;
+			audioListener.enabled = true;
 		}
 
 	}
 
-	public void ReadyUp(Transform gamePiece, float gapThickness, int row, int col, float width)
-	{
-		Debug.Log("readying up");
-		float gap = gapThickness / 2;
-		Mesh mesh = gamePiece.GetComponent<MeshFilter>().mesh;
-		Vector2[] uv = new Vector2[4];
+	//public void ReadyUp(Transform gamePiece, float gapThickness, int row, int col, float width)
+	//{
+	//	Debug.Log("readying up");
+	//	float gap = gapThickness / 2;
+	//	Mesh mesh = gamePiece.GetComponent<MeshFilter>().mesh;
+	//	Vector2[] uv = new Vector2[4];
 
-		uv[0] = new Vector2((width * col) + gap, 1 - ((width * (row + 1)) - gap));
-		uv[1] = new Vector2((width * (col + 1)) - gap, 1 - ((width * (row + 1)) - gap));
-		uv[2] = new Vector2((width * col) + gap, 1 - ((width * row) + gap));
-		uv[3] = new Vector2((width * (col + 1)) - gap, 1 - ((width * row) + gap));
+	//	uv[0] = new Vector2((width * col) + gap, 1 - ((width * (row + 1)) - gap));
+	//	uv[1] = new Vector2((width * (col + 1)) - gap, 1 - ((width * (row + 1)) - gap));
+	//	uv[2] = new Vector2((width * col) + gap, 1 - ((width * row) + gap));
+	//	uv[3] = new Vector2((width * (col + 1)) - gap, 1 - ((width * row) + gap));
 
-		mesh.uv = uv;
-	}
+	//	mesh.uv = uv;
+	//}
 }

@@ -8,9 +8,12 @@ public class SlidingGameManager : NetworkBehaviour
 {
     [SerializeField] private Transform gameLocation;
     [SerializeField] private NetworkObject gamePiece;
+	[SerializeField] private List<NetworkObject> puzzlePieces;
+	[SerializeField] private int pieceSize;
+	[SerializeField] private float gapSize;
 
-	public delegate void OnStartupDelegate(Transform gamePiece, float gapThickness, int row, int col, float width);
-	public static event OnStartupDelegate OnStartupEvent;
+	//public delegate void OnStartupDelegate(Transform gamePiece, float gapThickness, int row, int col, float width);
+	//public static event OnStartupDelegate OnStartupEvent;
 	public List<Transform> pieces;
 	public List<Transform> mirrorPieces;
 	//public List<PlayerScript> players;
@@ -27,11 +30,14 @@ public class SlidingGameManager : NetworkBehaviour
 	}
 	public void StartPuzzle()
 	{
-		SettupGame(0.01f);
+		SettupGame(gapSize);
 		if (!shuffling && CheckCompletion())
 		{
+
 			shuffling = true;
-			StartCoroutine(WaitShuffle(0.5f));
+			Shuffle();
+			shuffling = false;
+			//StartCoroutine(WaitShuffle(0.5f));
 		}
 	}
 
@@ -106,8 +112,8 @@ public class SlidingGameManager : NetworkBehaviour
 	private IEnumerator WaitShuffle(float duration)
 	{
 		yield return new WaitForSeconds(duration);
-		Shuffle();
-		shuffling = false;
+		//Shuffle();
+		//shuffling = false;
 	}
 
 	// Brute force shuffling.
@@ -144,38 +150,33 @@ public class SlidingGameManager : NetworkBehaviour
 	}
 	private void SettupGame(float gapThickness)
     {
+		//Debug.Log("Invocation list: " + OnStartupEvent.GetInvocationList().Length);
         float width = 1 / (float)gameSize.Value;
+		int i = 0;
         for (int row = 0; row < gameSize.Value; row++)
         {
             for (int col = 0; col < gameSize.Value; col++)
             {
-				NetworkObject pieceInstance = Instantiate(gamePiece, gameLocation);
+				NetworkObject pieceInstance = Instantiate(puzzlePieces[i], gameLocation);
+				i++;
 				pieceInstance.GetComponent<NetworkObject>().Spawn();
 				Transform piece = pieceInstance.transform;
 				pieces.Add(piece);
 				Transform mirrorImage = piece.gameObject.transform.GetChild(0);
 				mirrorPieces.Add(mirrorImage);
-				piece.localPosition = new Vector3(-1 + (2 * width * col) + width,
-									+1 - (2 * width * row) - width,
+				piece.localPosition = new Vector3((-1 + (2 * width * col) + width) * pieceSize,
+									(+1 - (2 * width * row) - width) * pieceSize,
 									0);
-				piece.localScale = ((2 * width) - gapThickness) * Vector3.one;
+				piece.localScale = ((2 * width) - gapThickness) * new Vector3 (pieceSize, pieceSize, pieceSize);
 				piece.name = $"{(row * gameSize.Value) + col}";
 
-				OnStartupEvent?.Invoke(piece, gapThickness, row, col, width);
+				//OnStartupEvent?.Invoke(piece, gapThickness, row, col, width);
 				if ((row == gameSize.Value - 1) && (col == gameSize.Value - 1) && IsHost)
 				{
 					piece.GetComponent<ComponentController>().SetEnabled(false);
 					emptyLocation = (gameSize.Value * gameSize.Value) - 1;
-					gamePiece.gameObject.SetActive(false);
+					//gamePiece.gameObject.SetActive(false);
 				}
-				//foreach (var x in players)
-				//{
-				//	x.ReadyUp(piece, gapThickness, row, col, width);
-				//	x.ReadyUp(mirrorImage, gapThickness, row, col, width);
-				//}
-				//CreatePieceUV(piece, gapThickness, row, col, width);
-				//CreatePieceUV(mirrorImage, gapThickness, row, col, width);
-
 			}
 		}
     }
