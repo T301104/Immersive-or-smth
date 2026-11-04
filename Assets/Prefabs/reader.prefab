@@ -373,6 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9222240403247623208}
+  - component: {fileID: 3919310930762887225}
   - component: {fileID: 4440521978045550657}
   m_Layer: 0
   m_Name: reader
@@ -400,6 +401,33 @@ Transform:
   - {fileID: 21611636973250367}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3919310930762887225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212614627754107936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 582178842
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  m_InScenePlacedDisabledByDefault: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  m_InScenePlaced: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &4440521978045550657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a88cae8402898d45b55c793f7da3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SerialScript
+  ShowTopMostFoldoutHeaderGroup: 1
   errorOne: {fileID: 1737738648469208387}
   errorTwo: {fileID: 2518670368485451023}
   errorThree: {fileID: 7941472240374596143}
