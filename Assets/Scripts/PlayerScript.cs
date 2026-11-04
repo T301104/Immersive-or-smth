@@ -27,7 +27,8 @@ public class PlayerScript : NetworkBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.V))
 		{
-			myCam.transform.position = myCam.transform.position + new Vector3(20,0,0);
+			Debug.Log("trying to change pos");
+			myCam.transform.position = new Vector3(77.55f,0,-10);
 		}
 	}
 	IEnumerator OwnerCheck()
@@ -41,29 +42,31 @@ public class PlayerScript : NetworkBehaviour
 		else
 		{
 			Debug.Log("There is an owner");
-			GameBoardObj = GameObject.Find("GameBoard");
-			slidingGameManager = GameObject.Find("GameBoard").GetComponent<SlidingGameManager>();
-			//Debug.Log(slidingGameManager.ToString());
-			//slidingGameManager.players.Add(this);
-			SlidingGameManager.OnStartupEvent += ReadyUp;
 
-			myCam = Camera.main;
+			//GameBoardObj = GameObject.Find("GameBoard");
+			//slidingGameManager = GameObject.Find("GameBoard").GetComponent<SlidingGameManager>();
+			////Debug.Log(slidingGameManager.ToString());
+			////slidingGameManager.players.Add(this);
+			//SlidingGameManager.OnStartupEvent += ReadyUp;
+
+			myCam.enabled = true;
+			audioListener.enabled = true;
 		}
 
 	}
 
-	public void ReadyUp(Transform gamePiece, float gapThickness, int row, int col, float width)
-	{
-		Debug.Log("readying up");
-		float gap = gapThickness / 2;
-		Mesh mesh = gamePiece.GetComponent<MeshFilter>().mesh;
-		Vector2[] uv = new Vector2[4];
+	//public void ReadyUp(Transform gamePiece, float gapThickness, int row, int col, float width)
+	//{
+	//	Debug.Log("readying up");
+	//	float gap = gapThickness / 2;
+	//	Mesh mesh = gamePiece.GetComponent<MeshFilter>().mesh;
+	//	Vector2[] uv = new Vector2[4];
 
-		uv[0] = new Vector2((width * col) + gap, 1 - ((width * (row + 1)) - gap));
-		uv[1] = new Vector2((width * (col + 1)) - gap, 1 - ((width * (row + 1)) - gap));
-		uv[2] = new Vector2((width * col) + gap, 1 - ((width * row) + gap));
-		uv[3] = new Vector2((width * (col + 1)) - gap, 1 - ((width * row) + gap));
+	//	uv[0] = new Vector2((width * col) + gap, 1 - ((width * (row + 1)) - gap));
+	//	uv[1] = new Vector2((width * (col + 1)) - gap, 1 - ((width * (row + 1)) - gap));
+	//	uv[2] = new Vector2((width * col) + gap, 1 - ((width * row) + gap));
+	//	uv[3] = new Vector2((width * (col + 1)) - gap, 1 - ((width * row) + gap));
 
-		mesh.uv = uv;
-	}
+	//	mesh.uv = uv;
+	//}
 }

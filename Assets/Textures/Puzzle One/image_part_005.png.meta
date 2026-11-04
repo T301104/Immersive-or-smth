@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5c8bdbb502a5e5445ad425b5f512f17d
+guid: 989be8906b20ca74d8b7d617bdb1b2c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4773450837639951736
-    second: boiler blueprint_0
+      213: 4553180192602770425
+    second: image_part_005_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boiler blueprint_0
+      name: image_part_005_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2493
-        height: 2493
+        width: 480
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88a0ea501cb41cdb0800000000000000
-      internalID: -4773450837639951736
+      spriteID: 9fbce6ae245203f30800000000000000
+      internalID: 4553180192602770425
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      boiler blueprint_0: -4773450837639951736
+      image_part_005_0: 4553180192602770425
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

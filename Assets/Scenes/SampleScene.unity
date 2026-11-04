@@ -1238,6 +1238,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: gapSize
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: pieceSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: puzzlePieces.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[0]'
+      value: 
+      objectReference: {fileID: 831117103121225640, guid: c14ec76298b147048b139fd1ddae126a, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1334050031889478823, guid: 919905e6a5e255c4bbaea89f59095c81, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8470104407074261998, guid: 5fef55ff61148d648acf904604385f85, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[3]'
+      value: 
+      objectReference: {fileID: 386494835993254354, guid: f4e6638bd584f324b9c524934f466903, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1124090022861629155, guid: e2b6daf9819f32c40a2910620775335d, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2654278967642355544, guid: 74dbf20aa7b60aa469d78ed1445a5c48, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[6]'
+      value: 
+      objectReference: {fileID: 927986055095844155, guid: 1a1287af085195b4cbc76c09c07083db, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[7]'
+      value: 
+      objectReference: {fileID: 7878461597973466083, guid: 40b8fe802ca51d349b4562770978352a, type: 3}
+    - target: {fileID: 2347711888710824684, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
+      propertyPath: 'puzzlePieces.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1390764549796228398, guid: 2df26b0c6e6f7ec46bee5c47e7765e63, type: 3}
     - target: {fileID: 7178957115726578736, guid: a12b4f1b661d6844489ee4dfcf894205, type: 3}
       propertyPath: m_InScenePlaced
       value: 1
