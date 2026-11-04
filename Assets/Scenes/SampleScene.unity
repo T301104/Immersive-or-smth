@@ -501,13 +501,21 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2552488680
       objectReference: {fileID: 0}
+    - target: {fileID: 4440521978045550657, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
+      propertyPath: paswordManager
+      value: 
+      objectReference: {fileID: 932346606}
+    - target: {fileID: 5130899590056483025, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8212614627754107936, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
       propertyPath: m_Name
       value: reader
       objectReference: {fileID: 0}
     - target: {fileID: 8212614627754107936, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,6 +653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829489e93f99d7f4792c5bf0bbdde879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaswordManager
+  firstPress: 1
+  errorsSolved: 0
   inputFieldOBJ: {fileID: 1816531746}
   UIBox: {fileID: 1732917815}
   inputField: {fileID: 1816531748}
@@ -1367,7 +1377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8166608693851682913, guid: f60051b3c5669d8489ca2f69fba2ed8c, type: 3}
+  m_Sprite: {fileID: -8166608693851682913, guid: 65f751fbb4787514ca497591fb17abe7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

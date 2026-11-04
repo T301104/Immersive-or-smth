@@ -3,6 +3,9 @@ using TMPro;
 public class PaswordManager : MonoBehaviour
 {
 	private string inputText;
+	public bool firstPress = true;
+	public bool errorsSolved = false;
+
 	[SerializeField] private GameObject inputFieldOBJ;
 	[SerializeField] private GameObject UIBox;
 	[SerializeField] private TMP_InputField inputField;
@@ -11,12 +14,16 @@ public class PaswordManager : MonoBehaviour
 
 	public void OpenPasswordUI()
 	{
-		if (!inputFieldOBJ.activeSelf)
+		if (firstPress)
+		{
+			firstPress = false;
+		}
+		else if (!inputFieldOBJ.activeSelf && errorsSolved)
 		{
 			inputFieldOBJ.SetActive(true);
 			UIBox.SetActive(true);
 		}
-		else
+		else if (errorsSolved)
 		{
 			inputFieldOBJ.SetActive(false);
 			UIBox.SetActive(false);

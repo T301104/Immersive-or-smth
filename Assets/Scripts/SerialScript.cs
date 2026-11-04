@@ -13,8 +13,12 @@ public class SerialScript : NetworkBehaviour
 	NetworkVariable<int> valueOne;
 	NetworkVariable<int> valueTwo;
 	NetworkVariable<int> valueThree;
-	int count = 0;
 
+	bool solvedOne = false;
+	bool solvedTwo = false;
+	bool solvedThree = false;
+
+	[SerializeField] PaswordManager paswordManager;
 
 	[SerializeField] GameObject errorOne;
 	[SerializeField] GameObject errorTwo;
@@ -55,6 +59,11 @@ public class SerialScript : NetworkBehaviour
 		valueTwo.Value = tmp[1] - '0';
 		valueThree.Value = tmp[2] - '0';
 		//Debug.Log(value);
+
+		if (solvedOne && solvedTwo && solvedThree)
+		{
+			paswordManager.errorsSolved = true;
+		}
 	}
 
 	private void CheckErrorOne(int old, int current)
@@ -64,11 +73,12 @@ public class SerialScript : NetworkBehaviour
 		if (current == 0)
 		{
 			errorOne.SetActive(true);
+			solvedOne = false;
 		}
 		else
 		{
 			errorOne.SetActive(false);
-			count++;
+			solvedOne = true;
 		}
 	}
 
@@ -77,16 +87,12 @@ public class SerialScript : NetworkBehaviour
 		if (current == 0)
 		{
 			errorTwo.SetActive(true);
+			solvedTwo = false;
 		}
 		else
 		{
 			errorTwo.SetActive(false);
-			count++;
-		}
-
-		if (count == 3)
-		{
-			this.gameObject.SetActive(false);
+			solvedTwo = true;
 		}
 	}
 
@@ -95,11 +101,12 @@ public class SerialScript : NetworkBehaviour
 		if (current  == 0)
 		{
 			errorThree.SetActive(true);
+			solvedThree = false;
 		}
 		else
 		{
 			errorThree.SetActive(false);
-			count++;
+			solvedThree = true;
 		}
 	}
 
