@@ -15,17 +15,12 @@ public class PaswordManager : MonoBehaviour
 
 	public void OpenPasswordUI()
 	{
-		if (firstPress)
-		{
-			firstPress = false;
-			wiresUI.SetActive(true);
-		}
-		else if (!inputFieldOBJ.activeSelf && errorsSolved)
+		if (!inputFieldOBJ.activeSelf)
 		{
 			inputFieldOBJ.SetActive(true);
 			UIBox.SetActive(true);
 		}
-		else if (errorsSolved)
+		else
 		{
 			inputFieldOBJ.SetActive(false);
 			UIBox.SetActive(false);

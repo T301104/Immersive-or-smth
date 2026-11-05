@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 4262452915466056273}
   - component: {fileID: -4995946262176312322}
   - component: {fileID: -8956123856724785925}
-  - component: {fileID: 4658097618062847573}
   m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
@@ -276,7 +275,7 @@ MonoBehaviour:
   myCam: {fileID: 6856211332529347889}
   audioListener: {fileID: 7854584955842943844}
   UIPassword: {fileID: 0}
-  serialScript: {fileID: 4658097618062847573}
+  serialScript: {fileID: 0}
   slidingGameManager: {fileID: 0}
   GameBoardObj: {fileID: 0}
 --- !u!114 &-8956123856724785925
@@ -325,32 +324,3 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 0
   SlerpPosition: 0
---- !u!114 &4658097618062847573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5221684730138525523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a88cae8402898d45b55c793f7da3b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SerialScript
-  ShowTopMostFoldoutHeaderGroup: 1
-  valueOne:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  valueTwo:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  valueThree:
-    UpdateTraits:
-      MinSecondsBetweenUpdates: 0
-      MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
-  isControl: 1

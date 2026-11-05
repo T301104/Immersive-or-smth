@@ -256,11 +256,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502993233}
   m_CullTransparentMesh: 1
---- !u!1 &580322265 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8212614627754107936, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-  m_PrefabInstance: {fileID: 883679155}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583659034
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,75 +477,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &883679155
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3919310930762887225, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_InScenePlaced
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919310930762887225, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2818889463
-      objectReference: {fileID: 0}
-    - target: {fileID: 4530543329098548995, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: paswordManager
-      value: 
-      objectReference: {fileID: 932346606}
-    - target: {fileID: 8212614627754107936, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_Name
-      value: reader
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
 --- !u!1 &932346601
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaswordManager
   firstPress: 1
   errorsSolved: 0
-  wiresUI: {fileID: 580322265}
+  wiresUI: {fileID: 0}
   inputFieldOBJ: {fileID: 1816531746}
   UIBox: {fileID: 1732917815}
   inputField: {fileID: 1816531748}
@@ -1196,6 +1122,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SlidingGameManager, Assembly-CSharp
         m_MethodName: StartPuzzle
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1330692635}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2472,4 +2410,3 @@ SceneRoots:
   - {fileID: 1768180314}
   - {fileID: 1750761831}
   - {fileID: 1732917817}
-  - {fileID: 883679155}
