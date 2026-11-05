@@ -6,6 +6,7 @@ public class PaswordManager : MonoBehaviour
 	public bool firstPress = true;
 	public bool errorsSolved = false;
 
+	[SerializeField] private GameObject wiresUI;
 	[SerializeField] private GameObject inputFieldOBJ;
 	[SerializeField] private GameObject UIBox;
 	[SerializeField] private TMP_InputField inputField;
@@ -17,6 +18,7 @@ public class PaswordManager : MonoBehaviour
 		if (firstPress)
 		{
 			firstPress = false;
+			wiresUI.SetActive(true);
 		}
 		else if (!inputFieldOBJ.activeSelf && errorsSolved)
 		{

@@ -256,6 +256,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502993233}
   m_CullTransparentMesh: 1
+--- !u!1 &580322265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8212614627754107936, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
+  m_PrefabInstance: {fileID: 883679155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583659034
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,29 +498,13 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 2818889463
       objectReference: {fileID: 0}
-    - target: {fileID: 3919310930762887225, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: SceneMigrationSynchronization
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919310930762887225, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 2552488680
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440521978045550657, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
+    - target: {fileID: 4530543329098548995, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
       propertyPath: paswordManager
       value: 
       objectReference: {fileID: 932346606}
-    - target: {fileID: 5130899590056483025, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8212614627754107936, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
       propertyPath: m_Name
       value: reader
-      objectReference: {fileID: 0}
-    - target: {fileID: 8212614627754107936, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222240403247623208, guid: 4664f9007e233cc4683ff7b500229709, type: 3}
       propertyPath: m_LocalPosition.x
@@ -655,6 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaswordManager
   firstPress: 1
   errorsSolved: 0
+  wiresUI: {fileID: 580322265}
   inputFieldOBJ: {fileID: 1816531746}
   UIBox: {fileID: 1732917815}
   inputField: {fileID: 1816531748}

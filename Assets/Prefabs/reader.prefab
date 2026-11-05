@@ -261,7 +261,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -374,14 +374,14 @@ GameObject:
   m_Component:
   - component: {fileID: 9222240403247623208}
   - component: {fileID: 3919310930762887225}
-  - component: {fileID: 4440521978045550657}
+  - component: {fileID: 4530543329098548995}
   m_Layer: 0
   m_Name: reader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9222240403247623208
 Transform:
   m_ObjectHideFlags: 0
@@ -413,22 +413,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 582178842
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  m_InScenePlacedDisabledByDefault: 0
+  GlobalObjectIdHash: 2818889463
+  InScenePlacedSourceGlobalObjectIdHash: 2552488680
+  m_InScenePlacedDisabledByDefault: 1
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
-  m_InScenePlaced: 0
+  m_InScenePlaced: 1
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &4440521978045550657
+--- !u!114 &4530543329098548995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -437,10 +437,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8212614627754107936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a88cae8402898d45b55c793f7da3b51, type: 3}
+  m_Script: {fileID: 11500000, guid: 75aae8b3c73042f48a59c970aef40197, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SerialScript
-  ShowTopMostFoldoutHeaderGroup: 1
-  errorOne: {fileID: 1737738648469208387}
+  m_EditorClassIdentifier: Assembly-CSharp::WiresManager
+  paswordManager: {fileID: 0}
+  arduinoReader: {fileID: 0}
+  errorOne: {fileID: 7941472240374596143}
   errorTwo: {fileID: 2518670368485451023}
-  errorThree: {fileID: 7941472240374596143}
+  errorThree: {fileID: 1737738648469208387}

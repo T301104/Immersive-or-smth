@@ -10,6 +10,8 @@ public class PlayerScript : NetworkBehaviour
 	public AudioListener audioListener;
 	[SerializeField] private GameObject UIPassword;
 
+	[SerializeField] public SerialScript serialScript;
+
 	private bool isPrison = false;
 	private bool isControl = false;
 	[SerializeField] private SlidingGameManager slidingGameManager;
@@ -31,10 +33,13 @@ public class PlayerScript : NetworkBehaviour
 		{
 			isControl = true;
 			UIPassword.SetActive(true);
+			this.gameObject.tag = "Control";
 		}
 		if (Input.GetKeyDown(KeyCode.P) && !isPrison && !isControl)
 		{
+			this.gameObject.tag = "Prison";
 			isPrison = true;
+			serialScript.isControl = false;
 			Debug.Log("trying to change pos");
 			myCam.transform.position = new Vector3(77.55f,0,-10);
 		}
