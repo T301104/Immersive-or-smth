@@ -10,9 +10,7 @@ public class WiresManager : MonoBehaviour
 
 	[SerializeField] SerialScript arduinoReader;
 
-	[SerializeField] GameObject errorOne;
-	[SerializeField] GameObject errorTwo;
-	[SerializeField] GameObject errorThree;
+
 
 	private void Update()
 	{
@@ -21,6 +19,7 @@ public class WiresManager : MonoBehaviour
 			arduinoReader = GameObject.FindWithTag("Prison").GetComponent<SerialScript>();
 			if (arduinoReader != null)
 			{
+				Debug.Log("subscribing to events");
 				arduinoReader.valueOne.OnValueChanged += CheckErrorOne;
 				arduinoReader.valueTwo.OnValueChanged += CheckErrorTwo;
 				arduinoReader.valueThree.OnValueChanged += CheckErrorThree;

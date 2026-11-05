@@ -42,6 +42,7 @@ public class PlayerScript : NetworkBehaviour
 			serialScript.isControl = false;
 			Debug.Log("trying to change pos");
 			myCam.transform.position = new Vector3(77.55f,0,-10);
+			serialScript.InitializeNetVars();
 		}
 	}
 	IEnumerator OwnerCheck()

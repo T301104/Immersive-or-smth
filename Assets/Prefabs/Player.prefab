@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4658097618062847573}
   m_Layer: 0
   m_Name: Player
-  m_TagString: MainCamera
+  m_TagString: Prison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
