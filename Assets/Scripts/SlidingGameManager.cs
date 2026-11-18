@@ -104,6 +104,7 @@ public class SlidingGameManager : NetworkBehaviour
 		}
 		if (gameDone)
 		{
+			pieces[emptyLocation].gameObject.SetActive(true);
 			pieces[emptyLocation].gameObject.GetComponent<ComponentController>().SetEnabled(true);
 		}
 		return true;
@@ -174,6 +175,7 @@ public class SlidingGameManager : NetworkBehaviour
 				if ((row == gameSize.Value - 1) && (col == gameSize.Value - 1) && IsHost)
 				{
 					piece.GetComponent<ComponentController>().SetEnabled(false);
+					piece.gameObject.SetActive(false);
 					emptyLocation = (gameSize.Value * gameSize.Value) - 1;
 					//gamePiece.gameObject.SetActive(false);
 				}
